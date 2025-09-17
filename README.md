@@ -26,3 +26,26 @@ docker compose up --build
 ```bash
 docker compose run --rm api pytest -q
 ```
+
+## For sanity checking, in a terminal, you could do:
+
+```bash
+# Create a task
+curl -s -X POST http://localhost:8000/tasks/ \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"Sanity Task","priority":1}'
+
+# List tasks
+curl -s http://localhost:8000/tasks/
+
+# Get by ID
+curl -s http://localhost:8000/tasks/1/
+
+# Update
+curl -s -X PUT http://localhost:8000/tasks/1/ \
+  -H 'Content-Type: application/json' \
+  -d '{"completed": true}'
+
+# Delete
+curl -s -X DELETE http://localhost:8000/tasks/1/
+```
