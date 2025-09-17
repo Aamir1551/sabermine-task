@@ -27,7 +27,13 @@ docker compose up --build
 docker compose run --rm api pytest -q
 ```
 
-## For sanity checking, in a terminal, you could do:
+## For sanity checking, in one terminal, you could do
+
+```bash
+docker compose up --build
+```
+
+In a seperate terminal, you could then do this
 
 ```bash
 # Create a task
